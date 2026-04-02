@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Photo Gallery</title>
+    <style>
+        :root {
+            --bg-color: #f4f4f9;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --accent-color: #6366f1;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background-color: rgb(167, 217, 246);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        /* --- The Grid Core --- */
+        .gallery-grid {
+            display: grid;
+            gap: 1.5rem;
+            /* Default: 1 column (Mobile) */
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        /* Responsive Breakpoint: Desktop (roughly 768px and up) */
+        @media (min-width: 768px) {
+            .gallery-grid {
+                /* 3 columns on Desktop */
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* --- Card Styling --- */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Keeps photos perfectly square */
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 style="font-weight: bold;">Project Gallery</h1>
+    
+    <div class="gallery-grid">
+        <div class="card">
+            <img src="https://picsum.photos/400/400?random=1" alt="Gallery Image 1">
+            <div class="card-content">
+                <p class="card-title">Mountain Peak</p>
+                <p class="card-desc">Exploring the high altitudes.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/400?random=2" alt="Gallery Image 2">
+            <div class="card-content">
+                <p class="card-title">Ocean Breeze</p>
+                <p class="card-desc">The calm before the storm.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/400?random=3" alt="Gallery Image 3">
+            <div class="card-content">
+                <p class="card-title">City Lights</p>
+                <p class="card-desc">Urban architecture at night.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/400?random=4" alt="Gallery Image 4">
+            <div class="card-content">
+                <p class="card-title">Forest Path</p>
+                <p class="card-desc">Finding peace in nature.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/400?random=5" alt="Gallery Image 5">
+            <div class="card-content">
+                <p class="card-title">Desert Dunes</p>
+                <p class="card-desc">Gold sand for miles.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/400?random=6" alt="Gallery Image 6">
+            <div class="card-content">
+                <p class="card-title">Autumn Leaves</p>
+                <p class="card-desc">Seasonal transitions.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/400?random=7" alt="Gallery Image 7">
+            <div class="card-content">
+                <p class="card-title">Modern Art</p>
+                <p class="card-desc">Minimalist gallery views.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/400?random=8" alt="Gallery Image 8">
+            <div class="card-content">
+                <p class="card-title">The Coffee Shop</p>
+                <p class="card-desc">Morning ritual essentials.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/400?random=9" alt="Gallery Image 9">
+            <div class="card-content">
+                <p class="card-title">Cloud Nine</p>
+                <p class="card-desc">View from the airplane window.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+          </html>
